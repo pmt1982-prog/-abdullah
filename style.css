@@ -1,183 +1,374 @@
 :root {
-    --bg-color: #0a0a0a;
-    --card-bg: #161616;
-    --text-primary: #ffffff;
-    --text-secondary: #a0a0a0;
-    --accent: #3b82f6; 
-    --accent-glow: rgba(59, 130, 246, 0.4);
-    --gradient: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-    --font-main: 'Inter', sans-serif;
-    --font-code: 'Fira Code', monospace; /* New Font */
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --bg-color: #0a0a0a;
+    --card-bg: #161616;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+    --accent: #3b82f6; /* Blue */
+    --accent-glow: rgba(59, 130, 246, 0.5);
+    --gradient: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    --font-main: 'Inter', sans-serif;
+    --transition: all 0.3s ease;
 }
 
-/* Base Styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
-    background-color: var(--bg-color);
-    color: var(--text-primary);
-    font-family: var(--font-main);
-    line-height: 1.6;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
-/* Navbar Enhancements */
+/* Typography */
+h1, h2, h3 {
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+/* Navbar */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 10%;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    background: rgba(10, 10, 10, 0.8);
-    backdrop-filter: blur(12px);
-    z-index: 1000;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(10, 10, 10, 0.9);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
 }
 
 .logo {
-    font-family: var(--font-code);
-    font-size: 1.4rem;
-    font-weight: 700;
-}
-
-.logo span {
-    color: var(--accent);
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .nav-links {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
+    display: flex;
+    gap: 2rem;
 }
 
-/* Hero Section Updates */
-.hero {
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    align-items: center;
-    padding: 0 10%;
-    gap: 2rem;
+.nav-links li a {
+    color: var(--text-secondary);
+    font-weight: 500;
 }
 
-.greeting {
-    font-family: var(--font-code);
-    color: var(--accent);
-    margin-bottom: 0.5rem;
+.nav-links li a:hover {
+    color: var(--accent);
 }
 
-/* Code Window Effect */
-.code-window {
-    background: #1e1e1e;
-    border-radius: 12px;
-    padding: 20px;
-    border: 1px solid #333;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-    font-family: var(--font-code);
-    position: relative;
-    overflow: hidden;
-}
-
-.dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    display: inline-block;
-    margin-right: 6px;
-    margin-bottom: 15px;
-}
-
-.red { background: #ff5f56; }
-.yellow { background: #ffbd2e; }
-.green { background: #27c93f; }
-
-.code-window pre {
-    color: #d4d4d4;
-    font-size: 0.9rem;
-}
-
-.keyword { color: #569cd6; }
-.func { color: #dcdcaa; }
-.str { color: #ce9178; }
-
-/* Squad / Chunks Section Styles */
-.chunks-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
-
-.chunk-item {
-    background: var(--card-bg);
-    padding: 1.5rem;
-    border-radius: 12px;
-    text-align: center;
-    border: 1px solid #222;
-    font-weight: 600;
-    color: var(--text-primary);
-    transition: var(--transition);
-    position: relative;
-    overflow: hidden;
-}
-
-.chunk-item::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; width: 4px; height: 100%;
-    background: var(--color); /* Uses the inline variable from HTML */
-}
-
-.chunk-item:hover {
-    transform: translateY(-5px);
-    border-color: var(--color);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-}
-
-/* Projects Enhancements */
-.tag {
-    display: inline-block;
-    font-family: var(--font-code);
-    font-size: 0.8rem;
-    color: var(--accent);
-    margin-top: 1rem;
-    background: rgba(59, 130, 246, 0.1);
-    padding: 2px 8px;
-    border-radius: 4px;
+.hamburger {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
 /* Buttons */
 .btn {
-    padding: 0.8rem 1.8rem;
-    border-radius: 8px; /* Squared off slightly for a modern look */
-    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
 }
 
-/* Footer Meta */
-.footer-meta {
-    font-size: 0.8rem;
-    margin-top: 10px;
-    opacity: 0.6;
+.btn-primary {
+    background: var(--gradient);
+    color: white !important;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
 }
 
-/* Responsive Fixes */
-@media (max-width: 968px) {
-    .hero {
-        grid-template-columns: 1fr;
-        text-align: center;
-        padding-top: 100px;
-    }
-    .hero-btns {
-        justify-content: center;
-    }
-    .code-window {
-        display: none; /* Hide complex visual on small mobile to save space */
-    }
+.btn-filled {
+    background: var(--gradient);
+    color: white;
+    border: none;
+}
+
+.btn-filled:hover {
+    box-shadow: 0 0 20px var(--accent-glow);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    background: transparent;
+}
+
+.btn-outline:hover {
+    background: var(--accent);
+    color: white;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10%;
+    padding-top: 80px;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.greeting {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, #fff, #b3b3b3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.highlight {
+    color: var(--accent);
+}
+
+.hero-btns {
+    display: flex;
+    gap: 1rem;
+}
+
+.hero-visual {
+    position: relative;
+}
+
+.circle-graphic {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: var(--gradient);
+    filter: blur(80px);
+    opacity: 0.3;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+/* Sections */
+.section {
+    padding: 6rem 10%;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.alt-bg {
+    background-color: #0f0f0f;
+}
+
+/* About Grid */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.skill-tag {
+    display: inline-block;
+    background: var(--card-bg);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    margin: 0.5rem 0.5rem 0.5rem 0;
+    border: 1px solid #333;
+    color: var(--accent);
+    font-weight: 500;
+}
+
+/* Projects */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid #222;
+    transition: var(--transition);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+}
+
+.card-icon {
+    font-size: 2rem;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+}
+
+.project-card h3 {
+    margin-bottom: 1rem;
+}
+
+.project-card p {
+    color: var(--text-secondary);
+}
+
+/* Contact */
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-subtitle {
+    margin-bottom: 3rem;
+    color: var(--text-secondary);
+}
+
+.insta-big-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    margin-bottom: 3rem;
+    color: white;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.insta-big-card:hover {
+    transform: scale(1.02);
+}
+
+.insta-big-card i.fab {
+    font-size: 2.5rem;
+}
+
+.insta-info {
+    flex: 1;
+    margin: 0 1.5rem;
+    text-align: left;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 1rem;
+    background: var(--card-bg);
+    border: 1px solid #333;
+    border-radius: 8px;
+    color: white;
+    font-family: inherit;
+    transition: var(--transition);
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-secondary);
+    border-top: 1px solid #222;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem 5%;
+    }
+    
+    .nav-links {
+        display: none; /* Mobile menu to be implemented if needed */
+    }
+    
+    .hero {
+        flex-direction: column-reverse;
+        padding-top: 120px;
+        text-align: center;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-btns {
+        justify-content: center;
+    }
+    
+    .circle-graphic {
+        width: 250px;
+        height: 250px;
+        margin-bottom: 2rem;
+    }
+    
+    .about-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .section {
+        padding: 4rem 5%;
+    }
 }
