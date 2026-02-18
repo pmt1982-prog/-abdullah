@@ -4,20 +4,12 @@
     --text-primary: #ffffff;
     --text-secondary: #a0a0a0;
     --accent: #3b82f6; 
-    --accent-glow: rgba(59, 130, 246, 0.4);
-    --gradient: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
     --font-main: 'Inter', sans-serif;
-    --font-code: 'Fira Code', monospace; /* New Font */
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --font-code: 'Fira Code', monospace;
+    --transition: all 0.2s ease;
 }
 
-/* Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
 
 body {
     background-color: var(--bg-color);
@@ -26,158 +18,76 @@ body {
     line-height: 1.6;
 }
 
-/* Navbar Enhancements */
+/* Navbar */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 10%;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    background: rgba(10, 10, 10, 0.8);
-    backdrop-filter: blur(12px);
-    z-index: 1000;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1rem 10%; position: fixed; width: 100%; top: 0;
+    background: rgba(10, 10, 10, 0.8); backdrop-filter: blur(10px); z-index: 1000;
 }
 
-.logo {
-    font-family: var(--font-code);
-    font-size: 1.4rem;
-    font-weight: 700;
-}
+.logo { font-family: var(--font-code); font-weight: 700; font-size: 1.5rem; }
+.logo span { color: var(--accent); }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { text-decoration: none; color: var(--text-secondary); font-weight: 500; }
 
-.logo span {
-    color: var(--accent);
-}
+/* Hero */
+.hero { min-height: 100vh; display: flex; align-items: center; justify-content: space-between; padding: 0 10%; }
+.hero h1 { font-size: 3.5rem; margin: 1rem 0; }
+.highlight { color: var(--accent); }
+.greeting { font-family: var(--font-code); color: var(--accent); }
 
-.nav-links {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-}
-
-/* Hero Section Updates */
-.hero {
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    align-items: center;
-    padding: 0 10%;
-    gap: 2rem;
-}
-
-.greeting {
-    font-family: var(--font-code);
-    color: var(--accent);
-    margin-bottom: 0.5rem;
-}
-
-/* Code Window Effect */
+/* The 3D Code Window */
 .code-window {
-    background: #1e1e1e;
-    border-radius: 12px;
-    padding: 20px;
-    border: 1px solid #333;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-    font-family: var(--font-code);
-    position: relative;
-    overflow: hidden;
+    background: #1e1e1e; padding: 20px; border-radius: 12px;
+    border: 1px solid #333; font-family: var(--font-code);
 }
+.dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; margin-right: 5px; }
+.red { background: #ff5f56; } .yellow { background: #ffbd2e; } .green { background: #27c93f; }
+.keyword { color: #569cd6; } .func { color: #dcdcaa; } .str { color: #ce9178; }
 
-.dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    display: inline-block;
-    margin-right: 6px;
-    margin-bottom: 15px;
-}
-
-.red { background: #ff5f56; }
-.yellow { background: #ffbd2e; }
-.green { background: #27c93f; }
-
-.code-window pre {
-    color: #d4d4d4;
-    font-size: 0.9rem;
-}
-
-.keyword { color: #569cd6; }
-.func { color: #dcdcaa; }
-.str { color: #ce9178; }
-
-/* Squad / Chunks Section Styles */
+/* SQUAD BUTTONS (THE CHUNKS) */
 .chunks-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 20px;
 }
 
-.chunk-item {
-    background: var(--card-bg);
-    padding: 1.5rem;
-    border-radius: 12px;
-    text-align: center;
-    border: 1px solid #222;
-    font-weight: 600;
-    color: var(--text-primary);
-    transition: var(--transition);
-    position: relative;
-    overflow: hidden;
+.chunk-button {
+    height: 80px; display: flex; align-items: center; justify-content: center;
+    border-radius: 12px; font-weight: 700; cursor: pointer;
+    box-shadow: 0 6px 0 rgba(0,0,0,0.3); /* The "Bottom" of the button */
+    transition: all 0.1s ease;
+    user-select: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.chunk-item::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; width: 4px; height: 100%;
-    background: var(--color); /* Uses the inline variable from HTML */
+.chunk-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 0 rgba(0,0,0,0.3);
+    filter: brightness(1.1);
 }
 
-.chunk-item:hover {
-    transform: translateY(-5px);
-    border-color: var(--color);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+.chunk-button:active {
+    transform: translateY(4px); /* Moves down when clicked */
+    box-shadow: 0 2px 0 rgba(0,0,0,0.3); /* Shadow gets smaller */
 }
 
-/* Projects Enhancements */
-.tag {
-    display: inline-block;
-    font-family: var(--font-code);
-    font-size: 0.8rem;
-    color: var(--accent);
-    margin-top: 1rem;
-    background: rgba(59, 130, 246, 0.1);
-    padding: 2px 8px;
-    border-radius: 4px;
+/* Sections & Forms */
+.section { padding: 6rem 10%; }
+.alt-bg { background: #0f0f0f; }
+.section-title { text-align: center; margin-bottom: 3rem; font-size: 2rem; }
+
+.btn { padding: 0.8rem 1.5rem; border-radius: 8px; font-weight: 600; text-decoration: none; display: inline-block; }
+.btn-filled { background: var(--accent); color: white; border: none; }
+.btn-outline { border: 2px solid var(--accent); color: var(--accent); }
+
+.contact-form { max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; }
+.input-group input, .input-group textarea {
+    width: 100%; padding: 12px; background: var(--card-bg); border: 1px solid #333; color: white; border-radius: 8px;
 }
 
-/* Buttons */
-.btn {
-    padding: 0.8rem 1.8rem;
-    border-radius: 8px; /* Squared off slightly for a modern look */
-    font-size: 0.95rem;
-}
+footer { text-align: center; padding: 2rem; border-top: 1px solid #222; }
 
-/* Footer Meta */
-.footer-meta {
-    font-size: 0.8rem;
-    margin-top: 10px;
-    opacity: 0.6;
-}
-
-/* Responsive Fixes */
-@media (max-width: 968px) {
-    .hero {
-        grid-template-columns: 1fr;
-        text-align: center;
-        padding-top: 100px;
-    }
-    .hero-btns {
-        justify-content: center;
-    }
-    .code-window {
-        display: none; /* Hide complex visual on small mobile to save space */
-    }
+@media (max-width: 768px) {
+    .hero { flex-direction: column; text-align: center; padding-top: 100px; }
+    .hero-visual { display: none; }
 }
