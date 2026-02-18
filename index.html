@@ -4,27 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdullah ibn Thajudheen | Personal Portfolio</title>
-    <meta name="description"
-        content="Portfolio of Abdullah ibn Thajudheen, a C Language learner and aspiring developer.">
-    <link rel="stylesheet" href="style.css">
+    <title>Abdullah ibn Thajudheen | Developer Portfolio</title>
+    <meta name="description" content="Portfolio of Abdullah ibn Thajudheen, a C Language learner and aspiring developer.">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <!-- Placeholder for FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <nav class="navbar">
-        <div class="logo">Personal Portfolio of Abdullah</div>
+        <div class="logo">Abdullah.<span>c</span></div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#chunks">The Squad</a></li>
             <li><a href="#contact" class="btn-primary">Contact</a></li>
-            <li><a href="#chunks">my chunks</a></li>
         </ul>
         <div class="hamburger">
             <i class="fas fa-bars"></i>
@@ -33,18 +32,23 @@
 
     <header id="home" class="hero">
         <div class="hero-content">
-            <span class="greeting">Hello, I'm</span>
+            <span class="greeting">/ / Hello World</span>
             <h1>Abdullah ibn Thajudheen</h1>
-            <p>Aspiring Developer learning <span class="highlight">C Language</span> &amp; Building Cool Things.</p>
+            <p>Aspiring Developer mastering <span class="highlight">C Programming</span> & Low-Level Logic.</p>
             <div class="hero-btns">
-                <a href="#projects" class="btn btn-outline">My Work</a>
-                <a href="https://www.instagram.com/Abd_u7o" target="_blank" class="btn btn-filled"><i
-                        class="fab fa-instagram"></i> Follow on Insta</a>
+                <a href="#projects" class="btn btn-outline">View Projects</a>
+                <a href="https://www.instagram.com/Abd_u7o" target="_blank" class="btn btn-filled">
+                    <i class="fab fa-instagram"></i> Instagram
+                </a>
             </div>
         </div>
         <div class="hero-visual">
-            <!-- Abstract geometric shape or placeholder for user image -->
-            <div class="circle-graphic"></div>
+            <div class="code-window">
+                <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
+                <pre><code><span class="keyword">void</span> <span class="func">main</span>() {
+  <span class="func">printf</span>(<span class="str">"Keep Coding"</span>);
+}</code></pre>
+            </div>
         </div>
     </header>
 
@@ -53,18 +57,15 @@
             <h2 class="section-title">About Me</h2>
             <div class="about-grid">
                 <div class="about-text">
-                    <p>I am a passionate student currently diving deep into the world of programming. My primary focus
-                        right now is mastering the <strong>C Language</strong>, the foundation of modern computing.</p>
-                    <p>I love solving logical problems and understanding how computers work under the hood. When I'm not
-                        coding, you can find me exploring new tech trends.</p>
+                    <p>I am a passionate student diving deep into the foundations of computing. My primary focus is mastering <strong>C</strong>, understanding memory management, and logic building.</p>
+                    <p>I believe that to build the future, you must understand how the "engine" works under the hood.</p>
                 </div>
                 <div class="skills">
-                    <h3>Current Skills</h3>
-                    <div class="skill-tag">C Programming</div>
-                    <div class="skill-tag">Logic Building</div>
-                    <div class="skill-tag">Problem Solving</div>
-                    <div class="skill-tag">Web Basics</div>
-                    <div class="skill-tag">tech works</div>
+                    <h3>Tech Stack</h3>
+                    <div class="skill-tag"><i class="fas fa-microchip"></i> C Programming</div>
+                    <div class="skill-tag"><i class="fas fa-brain"></i> Logic Building</div>
+                    <div class="skill-tag"><i class="fas fa-terminal"></i> CLI Tools</div>
+                    <div class="skill-tag"><i class="fab fa-html5"></i> Web Basics</div>
                 </div>
             </div>
         </div>
@@ -75,84 +76,67 @@
             <h2 class="section-title">My Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <div class="card-icon"><i class="fas fa-terminal"></i></div>
-                    <h3>C Calculator</h3>
-                    <p>A command-line interface calculator built with C that handles basic arithmetic operations.</p>
-                </div>
-                <!-- Add more projects as you build them -->
-                <div class="project-card">
-                    <div class="card-icon"><i class="fas fa-code"></i></div>
-                    <h3>Number Guessing Game</h3>
-                    <p>A fun logic game written in C where user guesses a random number.</p>
+                    <div class="card-icon"><i class="fas fa-calculator"></i></div>
+                    <h3>CLI Calculator</h3>
+                    <p>A robust command-line tool built in C handling arithmetic and error checking.</p>
+                    <span class="tag">Language: C</span>
                 </div>
                 <div class="project-card">
-                    <div class="card-icon"><i class="fas fa-laptop-code"></i></div>
-                    <h3>Learning Portfolio</h3>
-                    <p>This website! My first step into web development to showcase my journey.</p>
-                    <a href="#" class="btn-text">View Source Code <i class="fas fa-arrow-right"></i></a>
+                    <div class="card-icon"><i class="fas fa-gamepad"></i></div>
+                    <h3>Number Guessing</h3>
+                    <p>A logic-heavy game using random seeding and loops in C.</p>
+                    <span class="tag">Language: C</span>
+                </div>
+                <div class="project-card">
+                    <div class="card-icon"><i class="fas fa-globe"></i></div>
+                    <h3>This Portfolio</h3>
+                    <p>My first step into web development to showcase my C journey.</p>
+                    <a href="#" class="btn-text">View Source <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="section">
+    <section id="chunks" class="section">
+        <div class="container">
+            <h2 class="section-title">The Squad</h2>
+            <p class="section-subtitle">Collaborators & Friends</p>
+            <div class="chunks-grid">
+                <div class="chunk-item" style="--color: #74b9ff;">Emarin</div>
+                <div class="chunk-item" style="--color: #ff7675;">Mufassil</div>
+                <div class="chunk-item" style="--color: #55efc4;">Adhidev</div>
+                <div class="chunk-item" style="--color: #a29bfe;">Aarav</div>
+                <div class="chunk-item" style="--color: #fdcb6e;">Joseph</div>
+                <div class="chunk-item" style="--color: #e17055;">Thalal</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section alt-bg">
         <div class="container contact-container">
             <h2 class="section-title">Get In Touch</h2>
-            <p class="contact-subtitle">Have a question or want to work together? Slide into my DMs!</p>
+            <p class="contact-subtitle">Have a question? Drop a message!</p>
 
-            <a href="https://www.instagram.com/Abd_u7o" target="_blank" class="insta-big-card">
-                <i class="fab fa-instagram"></i>
-                <div class="insta-info">
-                    <h3>@Abd_u7o</h3>
-                    <p>Message me on Instagram</p>
-                </div>
-                <i class="fas fa-arrow-right arrow-icon"></i>
-            </a>
-
-            <form id="contactForm" class="contact-form">
+            <form id="contactForm" class="contact-form" action="https://formspree.io/f/YOUR_ID_HERE" method="POST">
                 <div class="input-group">
-                    <input type="text" id="name" required placeholder="Your Name">
+                    <input type="text" name="name" required placeholder="Your Name">
                 </div>
                 <div class="input-group">
-                    <input type="email" id="email" required placeholder="Your Email">
+                    <input type="email" name="email" required placeholder="Your Email">
                 </div>
                 <div class="input-group">
-                    <textarea id="message" rows="5" required placeholder="Your Message"></textarea>
+                    <textarea name="message" rows="5" required placeholder="Your Message"></textarea>
                 </div>
                 <button type="submit" class="btn btn-filled">Send Message</button>
             </form>
         </div>
     </section>
 
-    <section id="chunks" class="section alt-bg">
-        <div class="container" >
-            <h3 class="section-title">My Chunks</h3>
-            <div class="projects-grid">
-               
-                <div class="project-card" style="background-color: #74b9ff; color: white;">
-                    <h3>Emarin</h3>
-                </div>
-                 <div class="project-card" style="background-color: #ff7675; color: white;">
-                    <h3>Mufassil</h3>
-                </div>
-                 <div class="project-card" style="background-color: #55efc4; color: #333;"><h3>Adhidev</h3>
-                </div>
-                <div class="project-card" style="background-color: #a29bfe; color: white;"><h3>Aarav</h3>
-                </div>
-                <div class="project-card" style="background-color: #fdcb6e; color: #333;"><h3>Joseph</h3>
-                </div>
-                <div class="project-card" style="background-color: #e17055; color: white;"><h3>Thalal</h3>
-                </div>
-        </div>
-    </section>
-
     <footer>
-        <p>&copy; 2026 Abdullah ibn Thajudheen. All Rights Reserved.</p>
-        <p>This updated in 18/2/2026</p>
-        <p>updated idea by mufassil</p>
+        <p>&copy; 2026 Abdullah ibn Thajudheen</p>
+        <p class="footer-meta">Last Updated: 18/02/2026 | Idea by Mufassil</p>
     </footer>
 
     <script src="script.js"></script>
 </body>
-
 </html>
