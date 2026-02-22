@@ -3,23 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdullah ibn Thajudheen | Personal Portfolio</title>
-    <meta name="description" content="Portfolio of Abdullah ibn Thajudheen, a C Language learner and aspiring developer.">
+    <title>Abdullah ibn Thajudheen | Dev Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <nav class="navbar">
-        <div class="logo">Portfolio of Abdullah</div>
+        <div class="logo">ABDULLAH<span>.</span></div>
         <ul class="nav-links" id="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#projects">Projects</a></li>
-            <li><a href="#chunks">My Chunks</a></li>
-            <li><a href="#contact" class="btn-primary">Contact</a></li>
+            <li><a href="#chunks">Chunks</a></li>
+            <li><a href="#contact" class="btn-nav">Contact</a></li>
         </ul>
         <div class="hamburger" id="hamburger">
             <i class="fas fa-bars"></i>
@@ -27,19 +25,36 @@
     </nav>
 
     <header id="home" class="hero">
-        <div class="hero-content">
-            <span class="greeting">Hello, I'm</span>
-            <h1>Abdullah ibn Thajudheen</h1>
-            <p>Aspiring Developer learning <span class="highlight">C Language</span> &amp; Building Cool Things.</p>
-            <div class="hero-btns">
-                <a href="#projects" class="btn btn-outline">My Work</a>
-                <a href="https://www.instagram.com/Abd_u7o" target="_blank" class="btn btn-filled">
-                    <i class="fab fa-instagram"></i> Follow on Insta
-                </a>
+        <div class="hero-container">
+            <div class="status-badge">
+                <span class="dot"></span> Available for new projects
             </div>
-        </div>
-        <div class="hero-visual">
-            <div class="circle-graphic"></div>
+            <div class="hero-main">
+                <div class="hero-text">
+                    <h1>Building the <br><span class="gradient-text">Future with C</span></h1>
+                    <p>I'm Abdullah, an aspiring developer dedicated to mastering the core of computing through C and building modern web experiences.</p>
+                    <div class="hero-btns">
+                        <a href="#projects" class="btn btn-filled">View My Work</a>
+                        <a href="https://www.instagram.com/Abd_u7o" target="_blank" class="btn btn-outline"><i class="fab fa-instagram"></i> Instagram</a>
+                    </div>
+                </div>
+                <div class="hero-visual-modern">
+                    <div class="bento-box box-1">
+                        <i class="fas fa-terminal"></i>
+                        <span>C Specialist</span>
+                    </div>
+                    <div class="bento-box box-2">
+                        <i class="fas fa-code"></i>
+                        <span>Logic Design</span>
+                    </div>
+                    <div class="bento-box box-3">
+                        <div class="circle-glow"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-down">
+                <div class="mouse"></div>
+            </div>
         </div>
     </header>
 
@@ -48,16 +63,13 @@
             <h2 class="section-title">About Me</h2>
             <div class="about-grid">
                 <div class="about-text">
-                    <p>I am a passionate student currently diving deep into the world of programming. My primary focus is mastering <strong>C Language</strong>, the foundation of modern computing.</p>
-                    <p>I love solving logical problems and understanding how computers work under the hood. When I'm not coding, you can find me exploring new tech trends.</p>
-                </div>
-                <div class="skills">
-                    <h3>Current Skills</h3>
-                    <div class="skill-tag">C Programming</div>
-                    <div class="skill-tag">Logic Building</div>
-                    <div class="skill-tag">Problem Solving</div>
-                    <div class="skill-tag">Web Basics</div>
-                    <div class="skill-tag">Tech Works</div>
+                    <p>I am a passionate student diving deep into programming. My focus is <strong>C Language</strong>, the foundation of modern computing. I love solving complex logical problems.</p>
+                    <div class="skills-flex">
+                        <span class="skill-tag">C Language</span>
+                        <span class="skill-tag">Logic Building</span>
+                        <span class="skill-tag">Web Basics</span>
+                        <span class="skill-tag">Troubleshooting</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -65,22 +77,22 @@
 
     <section id="projects" class="section alt-bg">
         <div class="container">
-            <h2 class="section-title">My Projects</h2>
+            <h2 class="section-title">Selected Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <div class="card-icon"><i class="fas fa-terminal"></i></div>
+                    <div class="card-icon"><i class="fas fa-calculator"></i></div>
                     <h3>C Calculator</h3>
-                    <p>A command-line interface calculator built with C that handles basic arithmetic operations.</p>
+                    <p>A high-performance CLI tool for arithmetic operations built in pure C.</p>
                 </div>
                 <div class="project-card">
-                    <div class="card-icon"><i class="fas fa-code"></i></div>
-                    <h3>Number Guessing Game</h3>
-                    <p>A fun logic game written in C where user guesses a random number.</p>
+                    <div class="card-icon"><i class="fas fa-gamepad"></i></div>
+                    <h3>Guessing Game</h3>
+                    <p>An interactive logic-based game utilizing random memory allocation.</p>
                 </div>
                 <div class="project-card">
-                    <div class="card-icon"><i class="fas fa-laptop-code"></i></div>
-                    <h3>Learning Portfolio</h3>
-                    <p>This website! My first step into web development to showcase my journey.</p>
+                    <div class="card-icon"><i class="fas fa-globe"></i></div>
+                    <h3>This Portfolio</h3>
+                    <p>A modern, responsive site built with HTML, CSS, and JS.</p>
                 </div>
             </div>
         </div>
@@ -103,35 +115,25 @@
     <section id="contact" class="section alt-bg">
         <div class="container contact-container">
             <h2 class="section-title">Get In Touch</h2>
-            <p class="contact-subtitle">Have a question or want to work together? Slide into my DMs!</p>
-
-            <a href="https://www.instagram.com/Abd_u7o" target="_blank" class="insta-big-card">
+            <a href="https://www.instagram.com/Abd_u7o" target="_blank" class="insta-shimmer-card">
                 <i class="fab fa-instagram"></i>
                 <div class="insta-info">
                     <h3>@Abd_u7o</h3>
-                    <p>Message me on Instagram</p>
+                    <p>Follow for daily tech updates</p>
                 </div>
-                <i class="fas fa-arrow-right arrow-icon"></i>
+                <i class="fas fa-arrow-right"></i>
             </a>
-
             <form id="contactForm" class="contact-form">
-                <div class="input-group">
-                    <input type="text" id="name" required placeholder="Your Name">
-                </div>
-                <div class="input-group">
-                    <input type="email" id="email" required placeholder="Your Email">
-                </div>
-                <div class="input-group">
-                    <textarea id="message" rows="5" required placeholder="Your Message"></textarea>
-                </div>
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <textarea rows="4" placeholder="How can I help you?" required></textarea>
                 <button type="submit" class="btn btn-filled">Send Message</button>
             </form>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Abdullah ibn Thajudheen. All Rights Reserved.</p>
-        <p>Updated: 18/2/2026 | Idea by Mufassil</p>
+        <p>&copy; 2026 Abdullah ibn Thajudheen. Updated by Mufassil's Idea.</p>
     </footer>
 
     <script src="script.js"></script>
